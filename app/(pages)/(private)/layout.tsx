@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       {/* Top Bar */}
       <header className="bg-[#1A2D47] text-white p-4">
-        <h1 className="text-lg font-bold">Hola, Javier Cader</h1>
+        <h1 className="text-lg font-bold">Hola, Usuario</h1>
       </header>
 
       {/* Main Content */}
