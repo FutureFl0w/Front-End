@@ -32,7 +32,6 @@ ENV NEXT_TELEMETRY_DISABLED=1
 COPY --from=build-env /app/next.config.ts ./
 COPY --from=build-env /app/public ./public
 COPY --from=build-env /app/.next ./.next
-COPY --from=build-env /app/lib ./lib
 COPY --from=build-env /app/node_modules ./node_modules
 
 EXPOSE 3000
