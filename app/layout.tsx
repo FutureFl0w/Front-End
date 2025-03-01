@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import PageTransition from "./components/PageTransition";
+import DesktopOverlay from "./components/DesktopOverlay";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -8,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FutureFlow",
+  title: "SOMOS",
   description: "Fluye con el futuro",
   icons: {
     icon: "/favicon.png",
@@ -17,12 +19,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        <PageTransition>{children}</PageTransition>
+        <DesktopOverlay />
+      </body>
     </html>
   );
 }

@@ -1,22 +1,36 @@
-export default function Page() {
-    return (
-      <div className="p-4">
-        <h1 className="text-2xl font-bold mb-4">Welcome to Future Flow</h1>
-        <p className="mb-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper
-          turpis eget lacus finibus, vitae viverra ligula faucibus.
-        </p>
-        <p className="mb-2">
-          Pellentesque pellentesque, metus at fermentum molestie, ligula mi
-          vehicula velit, non porttitor neque sapien eget nulla. Etiam ac tortor
-          suscipit, venenatis nisl eget, suscipit purus.
-        </p>
-        <p className="mb-2">
-          Curabitur et felis eget metus egestas blandit. Maecenas congue turpis
-          diam, vitae faucibus urna consequat sit amet. Quisque volutpat libero ut
-          dolor fermentum tincidunt.
-        </p>
+import CardsMenu from "@/app/components/CardsMenu";
+import CardsPageList from "@/app/components/CardsPageList";
+
+
+export default function CardsPage() {
+  // Mock data for cards
+  const cardsData = [
+    {
+      id: 1,
+      title: "Trimestral Joven - Roja",
+      cardId: "ES20018",
+      vencimiento: "31/03/2030",
+      saldo: "Activada hasta el 31 de Marzo",
+    },
+    {
+      id: 2,
+      title: "Estándar Recargable - Gris",
+      cardId: "BO 0110000",
+      vencimiento: "31/03/2028",
+      saldo: "5,73 €",
+    },
+  ];
+
+  return (
+    <div className="bg-white min-h-screen p-4">
+      {/* Header Row */}
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-lg font-bold">Mis Tarjetas</h1>
+        <CardsMenu />
       </div>
-    );
-  }
-  
+
+      {/* Cards List */}
+      <CardsPageList cards={cardsData} />
+    </div>
+  );
+}

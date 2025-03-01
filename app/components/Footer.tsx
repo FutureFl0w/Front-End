@@ -24,10 +24,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#1A2D47] p-2">
+    <footer className="bg-[#1A2D47] p-6">
       <nav className="flex justify-around">
         {links.map((link) => {
-          const active = pathname === link.href;
+          const active = pathname.includes(link.href);
           return (
             <Link key={link.href} href={link.href}>
               <link.Icon
