@@ -10,7 +10,11 @@ interface HamburgerOptionsProps {
   notificationCount: number;
 }
 
-export default function HamburgerOptions({ isOpen, onToggle, notificationCount }: HamburgerOptionsProps) {
+export default function HamburgerOptions({
+  isOpen,
+  onToggle,
+  notificationCount,
+}: HamburgerOptionsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Close the menu if clicking outside the component
@@ -51,15 +55,33 @@ export default function HamburgerOptions({ isOpen, onToggle, notificationCount }
             variants={menuVariants}
             transition={{ duration: 0.2 }}
           >
-            <Link href="/notifications" className="relative block px-4 py-2 hover:bg-gray-100">
+            <Link
+              href="/notifications"
+              className="relative block px-4 py-2 hover:bg-gray-100"
+            >
               Notificaciones
               {notificationCount > 0 && (
-                <span className="absolute top-2 right-4 bg-red-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
+                <span className="absolute top-2 right-4 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
                   {notificationCount}
                 </span>
               )}
             </Link>
-            <Link href="/profile/settings" className="block px-4 py-2 hover:bg-gray-100">
+
+            {/* New Encuestas link with purple badge */}
+            <Link
+              href="/rewards/surveys"
+              className="relative block px-4 py-2 hover:bg-gray-100"
+            >
+              Encuestas
+              <span className="absolute top-2 right-4 bg-purple-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
+                1
+              </span>
+            </Link>
+
+            <Link
+              href="/profile/settings"
+              className="block px-4 py-2 hover:bg-gray-100"
+            >
               Configuración de cuenta
             </Link>
             <Link href="/login" className="block px-4 py-2 hover:bg-gray-100">

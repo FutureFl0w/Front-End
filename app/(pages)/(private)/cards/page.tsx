@@ -22,7 +22,7 @@ export default function CardsPage() {
   ];
 
   return (
-    <div className="bg-white min-h-screen p-4">
+    <div className="bg-white p-4">
       {/* Header Row */}
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-lg font-bold">Mis Tarjetas</h1>

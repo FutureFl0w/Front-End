@@ -1,0 +1,49 @@
+---
+
+steps:
+  - id: 'Building'
+    name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        docker build \
+          -t ${_IMAGE_LATEST} .
+
+  - id: 'Pushing'
+    name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - '${_IMAGE_LATEST}'
+
+  - id: 'Deploying'
+    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - '${_PROJECT_NAME}'
+      - '--min-instances=0'
+      - '--max-instances=3'
+      - '--platform=managed'
+      - '--region=${_REGION}'
+      - '--memory=2Gi'
+      - '--cpu=1'
+      - '--allow-unauthenticated'
+      - '--image=${_IMAGE_LATEST}'
+      - '--project=${_PROJECT_ID}'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+images:
+  - '${_IMAGE_LATEST}'
+
+substitutions:
+  _REGION: 'europe-west1'
+  _IMAGE: '${_REGION}-docker.pkg.dev/${_PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/${_PROJECT_NAME}'
+  _IMAGE_LATEST: '${_IMAGE}:latest'
+
+tags:
+  - master
+  - develop

@@ -1,6 +1,7 @@
 "use client";
 
 import { FaEye } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 interface CardData {
   id: number;
@@ -15,6 +16,12 @@ interface CardsListProps {
 }
 
 export default function CardsPageList({ cards }: CardsListProps) {
+  const router = useRouter();
+
+  const handleViewDetails = (cardId: number) => {
+    router.push(`/cards/details/${cardId}`);
+  };
+
   return (
     <div className="space-y-6">
       {cards.map((card) => (
@@ -27,7 +34,7 @@ export default function CardsPageList({ cards }: CardsListProps) {
             <h2 className="font-semibold text-sm">{card.title}</h2>
             <button
               className="text-gray-500 hover:text-gray-700"
-              onClick={() => alert(`Ver detalles de ${card.title}`)}
+              onClick={() => handleViewDetails(card.id)}
             >
               <FaEye size={24} />
             </button>
