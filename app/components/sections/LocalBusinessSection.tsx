@@ -13,7 +13,7 @@ export default function LocalBusinessesSection() {
       id: 1,
       name: "El Gato con Balcón",
       tagline: "Moda y diseño",
-      image: "/mock/local_business/mock-1.webp",
+      image: "/mock/local_business/mock-3.webp",
       query: "El Gato con Balcón",
     },
     {
@@ -27,7 +27,7 @@ export default function LocalBusinessesSection() {
       id: 3,
       name: "Mesón Rampalay",
       tagline: "Platos combinados",
-      image: "/mock/local_business/mock-3.webp",
+      image: "/mock/local_business/mock-1.webp",
       query: "Mesón Rampalay",
     },
   ];

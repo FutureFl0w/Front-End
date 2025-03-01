@@ -29,7 +29,7 @@ export default function SchedulerSection() {
             <div className="flex items-center justify-between">
                 <h3 className="text-base font-semibold">Viajes Programados</h3>
                 <div className="flex items-center gap-2">
-                    <span className="text-[12px] text-gray-500">Los más recientes</span>
+                    <span className="text-[12px] text-gray-500">Ver más</span>
                     <Link href="/scheduler" className="text-gray-500 hover:text-gray-700">
                         <FaArrowRight fontSize={24} />
                     </Link>
