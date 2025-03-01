@@ -33,7 +33,6 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  workerPool: "projects/${_PROJECT_ID}/locations/${_REGION}/workerPools/FUTUREFLOW-WORKER-POOL"
 
 images:
   - '${_IMAGE_LATEST}'
