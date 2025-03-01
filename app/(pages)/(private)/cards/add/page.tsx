@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Confetti from "react-confetti";
 import { useRouter } from "next/navigation";
 import { FaChevronDown } from "react-icons/fa";
 
@@ -12,7 +11,7 @@ export default function AddCardPage() {
     const router = useRouter();
 
     // Track window size for confetti sizing
-    const [windowSize, setWindowSize] = useState({ width: 300, height: 300 });
+    const [_windowSize, setWindowSize] = useState({ width: 300, height: 300 });
     useEffect(() => {
         setWindowSize({ width: window.innerWidth, height: window.innerHeight });
         const handleResize = () =>

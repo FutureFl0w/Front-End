@@ -19,7 +19,7 @@ interface InteractiveRewardsListProps {
   userPoints: number;
 }
 
-export default function InteractiveRewardsList({ rewards, userPoints }: InteractiveRewardsListProps) {
+export default function InteractiveRewardsList({ rewards, userPoints: _userPoints }: InteractiveRewardsListProps) {
   const [selectedReward, setSelectedReward] = useState<Reward | null>(null);
   const [showClaimModal, setShowClaimModal] = useState(false);
   const [showCongratsModal, setShowCongratsModal] = useState(false);

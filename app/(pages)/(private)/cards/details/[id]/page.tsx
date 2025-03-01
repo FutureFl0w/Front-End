@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FaTimes, FaWifi } from "react-icons/fa";
 
 export default function CardDetailsPage() {
-    const { id } = useParams();
+    const { id: _id } = useParams();
     const router = useRouter();
     const [isScanning, setIsScanning] = useState(false);
     const [scanComplete, setScanComplete] = useState(false);

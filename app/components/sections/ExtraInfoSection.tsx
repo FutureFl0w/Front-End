@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 // Dynamically import Lottie with SSR disabled.
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ExtraInfoSection() {
   const [busAnimation, setBusAnimation] = useState<any>(null);
 
